@@ -186,7 +186,7 @@
 	It does not require an 'interval' attribute.
 	(This logic is performed while the character is still under the effects of this status effect.) -->
 	<applyRemovalEffect><![CDATA[
-		#IF(!npc.hasStatusEffect(SE_xys_transformCum_alpha) && npc.hasPenisIgnoreDildo() && npc.getPenisRawCumStorageValue() >= 2000 && npc.hasFetish(FETISH_CUM_STUD) && npc.hasFetish(FETISH_TRANSFORMATION_GIVING) && Math.random() < 0.3)
+		#IF(!npc.hasStatusEffect(SE_xys_condarbi_transformCumBoi_alpha) && npc.hasPenisIgnoreDildo() && npc.getPenisRawCumStorageValue() >= 2000 && npc.hasFetish(FETISH_CUM_STUD) && npc.hasFetish(FETISH_TRANSFORMATION_GIVING) && Math.random() < 0.3)
 			<p>
                 [npc.Name] can't get enough of it, the feeling of turning people [npc.she] [npc.verb(cum)] on into futas. As [npc.she] 
                 #IF(npc.isCoverableAreaExposed(CA_PENIS))
@@ -267,7 +267,7 @@
             <p>
                 [npc.A_moan] escapes [npc.her] [npc.lips] as [npc.her] body finishes its transformation into a new, more suitable form for seeding. Idly stroking [npc.her] [npc.cock+], [npc.she] [npc.verb(shudder)] in delight as [npc.she] [npc.verb(think)] of ways in using [npc.her] [npc.cum+]'s newfound potency...
             </p>
-            [##npc.addStatusEffect(SE_xys_transformCum_alpha, 21600)]
+            [##npc.addStatusEffect(SE_xys_condarbi_transformCumBoi_alpha, 21600)]
         #ENDIF
 	]]></applyRemovalEffect>
 	

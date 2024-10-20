@@ -181,8 +181,8 @@
 							game.appendToTextEndStringBuilder(partner.addFetish(FETISH_CUM_ADDICT));
 						};
 
-						if(!partner.hasStatusEffect(SE_xys_transformCum_alpha)) {
-							partner.addStatusEffect(SE_xys_transformCum, 21600);
+						if(!partner.hasStatusEffect(SE_xys_condarbi_transformCumBoi_alpha)) {
+							partner.addStatusEffect(SE_xys_condarbi_transformCumBoi, 21600);
 						};
 					};
 				};

@@ -35,7 +35,7 @@
 		<applyEffects><![CDATA[
 			<p>
 				The small pill easily slides down [npc.her] throat, 
-				#IF(npc.hasStatusEffect(SE_xys_transformCum_alpha))
+				#IF(npc.hasStatusEffect(SE_xys_condarbi_transformCumBoi_alpha))
 					but there's no obvious changes to [npc.herHim] even after waiting for a while. It seems that the pill doesn't work as [npc.she] already [npc.has] a more potent form of the effect!
 				#ELSE
 					and within moments, [npc.she] [npc.verb(feel)] a soothing, warm glow spreading out from [npc.her] lower torso into [npc.her] 
@@ -47,7 +47,7 @@
 					#ELSE
 						groin, before it fades away. [npc.sheIs] left thinking that if [npc.she] were to gain a penis, [npc.she] would be able to turn others into futanaries with [npc.her] [npc.cum+]. 
 					#ENDIF
-					[##npc.addStatusEffect(SE_xys_transformCum, 21600)]
+					[##npc.addStatusEffect(SE_xys_condarbi_transformCumBoi, 21600)]
 				#ENDIF
 			</p>
 		]]></applyEffects>
