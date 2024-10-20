@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA["Made by Ysette's Sinful Services Pte Ltd, Pharmaeutical Branch" is written on the back of the packaging in fine print.]]></authorTag>
+		<value>500</value> 
+		<determiner><![CDATA[an]]></determiner>
+		<name><![CDATA[alpha futa pill]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[alpha futa pills]]></namePlural>
+		<description><![CDATA[
+			A small, dark green pill, individually packaged in a foil and plastic wrapper. The text printed on the foil identifies this pill as a 'Alpha Futanari Inducer', or an 'alpha futa pill' for short.
+			<br/>The packaging reads: <i>"Heavily modifies people into [style.colourSex(futanaries with temporarily transformative cum.)] [style.boldTerrible(CONSUME AT YOUR OWN RISK.)]"</i>
+		]]></description> 
+		
+		<useDescriptor>swallow</useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>false</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>RARE</rarity> 
+		
+		<imageName>futaPill_plus.svg</imageName> 
+		
+		<colourPrimary>CLOTHING_GREEN_DARK</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<statusEffects/>
+		
+		<effectTooltipLines>
+			<line><![CDATA[Adds the [style.boldTfSex('Transformative Cum (Alpha)')] effect]]></line>
+			<line><![CDATA[[style.colourBad(Forcefully transforms)] the user into an oversexualized futanari]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			<p>
+				As the pill slides down [npc.namePos] throat, [npc.she] [npc.verb(assume)] there's little effect to be felt, but suddenly a powerful cramp takes hold of [npc.her] stomach!
+			</p>
+			<p>
+				The feeling doesn't stop there, however, as the cramp quickly spreads all over [npc.her], but focuses more into [npc.her] groin. 
+				#IF(!npc.hasPenisIgnoreDildo())
+					[npc.She] [npc.verb(feel)] [npc.her] body heating up and begins to transform itself for the pill to have effect! 
+				#ELSE
+					[npc.She] [npc.verb(feel)] [npc.her] blood flowing into [npc.her] [npc.cock+], making it erect and throb with need! 
+				#ENDIF
+			</p>
+			#IF(!npc.hasPenisIgnoreDildo())
+				[#npc.setPenisType(npc.getRace().getRacialBody().getPenisType())]
+			#ENDIF
+			#IF(npc.getPenisRawSizeValue() < PENIS_LENGTH_FIVE_ENORMOUS.getMedianValue())
+                [#npc.setPenisSize(PENIS_LENGTH_FIVE_ENORMOUS.getMedianValue())]
+            #ENDIF
+            #IF(npc.getTesticleSize().getValue() < 7)
+                [#npc.setTesticleSize(7)]
+            #ENDIF
+            #IF(npc.getPenisRawCumStorageValue() < CUM_PRODUCTION_SIX_EXTREME.getMedianValue())
+                [#npc.setPenisCumStorage(CUM_PRODUCTION_SIX_EXTREME.getMedianValue())]
+            #ENDIF
+            #IF(npc.getPenisRawCumProductionRegenerationValue() < 5000) 
+				[#npc.setPenisCumProductionRegeneration(5000)]
+            #ENDIF
+			[##npc.fillCumToMaxStorage()]
+            #IF(game.isMuskContentEnabled() && !npc.hasCumModifier(FLUID_MODIFIER_MUSKY))
+                [#npc.addCumModifier(FLUID_MODIFIER_MUSKY)]
+            #ENDIF
+            #IF(!npc.hasCumModifier(FLUID_MODIFIER_VISCOUS))
+                [#npc.addCumModifier(FLUID_MODIFIER_VISCOUS)]
+            #ENDIF
+            #IF(!npc.hasCumModifier(FLUID_MODIFIER_ADDICTIVE))
+                [#npc.addCumModifier(FLUID_MODIFIER_ADDICTIVE)]
+            #ENDIF
+			#IF(!npc.getCovering(BODY_COVERING_TYPE_CUM).isPrimaryGlowing())
+				<p>
+					A deep throbbing sensation builds up within [npc.her] [npc.balls], and as a trickle of precum leaks out from the head of [npc.her] member,
+					 [npc.she] [npc.verb(let)] out [npc.a_moan+] when [npc.she] [npc.verb(realise)] that [npc.her] [npc.cum] is now [style.boldGrow(glowing)]!
+					[##npc.getCovering(BODY_COVERING_TYPE_CUM).setPrimaryGlowing(true)]
+				</p>
+			#ENDIFs
+
+            #IF(npc.getBreastRawSizeValue() < 15)
+                [#npc.setBreastSize(15)]
+            #ENDIF
+
+			#IF(npc.hasVagina())
+				#IF(npc.getVaginaWetness().getValue() < 5) 
+					[#npc.setVaginaWetness(5)]
+				#ENDIF
+				#IF(npc.getVaginaElasticity().getValue() < 7) 
+					[#npc.setVaginaElasticity(7)]
+				#ENDIF
+				#IF(npc.getVaginaRawCapacityValue() > 1) 
+					[#npc.setVaginaElasticity(1)]
+				#ENDIF
+				#IF(npc.getVaginaPlasticity().getValue() > 0) 
+					[#npc.setVaginaPlasticity(0)]
+				#ENDIF
+				#IF(!npc.isVaginaSquirter()) 
+					[#npc.setVaginaSquirter(true)]
+				#ENDIF
+			#ENDIF
+			
+			#IF(npc.getFemininityValue() < FEMININITY_FEMININE_STRONG.getMaximumFemininity())
+				[#npc.setFemininity(FEMININITY_FEMININE_STRONG.getMaximumFemininity())]
+			#ENDIF
+
+			#IF(!npc.hasFetish(FETISH_CUM_STUD))
+				[#npc.addFetish(FETISH_CUM_STUD)]
+			#ENDIF
+			#IF(!npc.hasFetish(FETISH_CUM_ADDICT))
+				[#npc.addFetish(FETISH_CUM_ADDICT)]
+			#ENDIF
+			#IF(!npc.hasFetish(FETISH_SIZE_QUEEN))
+				[#npc.addFetish(FETISH_SIZE_QUEEN)]
+			#ENDIF
+
+			[#npc.incrementAttribute(ATTRIBUTE_MAJOR_CORRUPTION, 20)]
+            <p>
+                [npc.She] [npc.moans] in delight as [npc.her] body finishes its transformation into a new, more suitable form for seeding. Idly pumping [npc.her] [npc.cock+], [npc.she] [npc.verb(shudder)] as [npc.she] [npc.verb(think)] of ways in using [npc.her] [npc.cum+]'s newfound potency...
+            </p>
+			[##npc.addStatusEffect(SE_xys_transformCum_alpha, 21600)]
+			[##npc.removeStatusEffect(SE_xys_transformCum)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>ATTRIBUTE_TF_ITEM</tag>
+			<tag>CONTRABAND_MEDIUM</tag>
+			<tag>DOMINION_ALLEYWAY_SPAWN</tag>
+			<tag>SUBMISSION_TUNNEL_SPAWN</tag>
+			<tag>NOT_FOR_SALE</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name] [npc.verb(pop)] an alpha futa pill out of its little foil wrapper, before quickly placing it in [npc.her] mouth and swallowing it down.
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name] [npc.verb(pop)] an alpha futa pill out of its little foil wrapper, before bringing it up to [npc2.namePos] [npc2.lips], forcing it into [npc2.her] mouth, and making sure that [npc2.she] [npc2.verb(swallow)] it down.
+		]]></otherUse>
+	</useDescriptions>
+</item>
