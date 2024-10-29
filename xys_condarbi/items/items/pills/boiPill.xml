@@ -8,7 +8,7 @@
 		<namePlural pluralByDefault="false"><![CDATA[boi pills]]></namePlural>
 		<description><![CDATA[
 			A small green pill, individually packaged in a foil and plastic wrapper. The text printed on the foil identifies this pill as a 'Twink Inducer', but it's commonly known as a 'boi pill'.
-			<br/>The packaging reads: <i>"Temporary transformative effect on cum that [style.colourSex(turns people into futanaries.)] [style.colourBad(Has a 30% chance of effect extending and mutating. Conditions unknown.)]"</i>
+			<br/>The packaging reads: <i>"Temporary transformative effect on cum that [style.colourSex(turns people into twinks.)] [style.colourBad(Has a 30% chance of effect extending and mutating. Conditions unknown.)]"</i>
 		]]></description> 
 		
 		<useDescriptor>swallow</useDescriptor>
@@ -40,14 +40,20 @@
 				#ELSE
 					and within moments, [npc.she] [npc.verb(feel)] a soothing, warm glow spreading out from [npc.her] lower torso into [npc.her] 
 					#IF(npc.hasPenisIgnoreDildo())
-						[npc.cock+]. [npc.Her] mind fogs over with an overpowering desire to unload [npc.her] [npc.cum+] all over someone, and turning them into a futanari! 
+						[npc.cock+]. [npc.Her] mind fogs over with an overpowering desire to unload [npc.her] [npc.cum+] all over someone, and turn them into a twink!
 						#IF(npc.hasVagina())
 							At the same time, [npc.she] [npc.verb(feel)] a desperate heat coming from [npc.her] [npc.pussy], and before [npc.she] can stop it, a horny whimper escapes from between [npc.her] [npc.lips].
 						#ENDIF
-					#ELSE
+                        [##npc.addStatusEffect(SE_xys_condarbi_transformCumBoi, (60 * 60 * 24 * 3))]
+					#ELSEIF(npc.hasFetish(FETISH_PENIS_GIVING) || npc.hasFetish(FETISH_CUM_STUD))
+                        groin, before it quickly becomes more and more intense.
+                        [#npc.setPenisType(npc.getRace().getRacialBody().getPenisType())]
+                        Meanwhile, [npc.her] mind fogs over with an overpowering desire to unload [npc.her] [npc.cum+] all over someone, and turn them into a twink!
+                        [##npc.addStatusEffect(SE_xys_condarbi_transformCumBoi, (60 * 60 * 24 * 2))]
+                    #ELSE
 						groin, before it fades away. [npc.sheIs] left thinking that if [npc.she] were to gain a penis, [npc.she] would be able to turn others into futanaries with [npc.her] [npc.cum+]. 
+                        [##npc.addStatusEffect(SE_xys_condarbi_transformCumBoi, (60 * 60 * 24 * 3))]
 					#ENDIF
-					[##npc.addStatusEffect(SE_xys_condarbi_transformCumBoi, (60 * 60 * 24 * 3))]
 				#ENDIF
 			</p>
 		]]></applyEffects>
@@ -62,10 +68,10 @@
 
 	<useDescriptions>
 		<selfUse><![CDATA[
-		[npc.Name] [npc.verb(pop)] a futa pill out of its little foil wrapper, before quickly placing it in [npc.her] mouth and swallowing it down.
+		[npc.Name] [npc.verb(pop)] a boi pill out of its little foil wrapper, before quickly placing it in [npc.her] mouth and swallowing it down.
 		]]></selfUse>
 		<otherUse><![CDATA[
-		[npc.Name] [npc.verb(pop)] a futa pill out of its little foil wrapper, before bringing it up to [npc2.namePos] [npc2.lips], forcing it into [npc2.her] mouth, and making sure that [npc2.she] [npc2.verb(swallow)] it down.
+		[npc.Name] [npc.verb(pop)] a boi pill out of its little foil wrapper, before bringing it up to [npc2.namePos] [npc2.lips], forcing it into [npc2.her] mouth, and making sure that [npc2.she] [npc2.verb(swallow)] it down.
 		]]></otherUse>
 	</useDescriptions>
 </item>
