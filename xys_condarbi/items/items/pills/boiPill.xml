@@ -4,10 +4,10 @@
 		<authorTag><![CDATA["Made by Ysette's Sinful Services Pte Ltd, Pharmaeutical Branch" is written on the back of the packaging in fine print.]]></authorTag>
 		<value>250</value> 
 		<determiner><![CDATA[a]]></determiner>
-		<name><![CDATA[futa pill]]></name>
-		<namePlural pluralByDefault="false"><![CDATA[futa pills]]></namePlural>
+		<name><![CDATA[boi pill]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[boi pills]]></namePlural>
 		<description><![CDATA[
-			A small green pill, individually packaged in a foil and plastic wrapper. The text printed on the foil identifies this pill as a 'Futanari Inducer', but it's commonly known as a 'futa pill'.
+			A small green pill, individually packaged in a foil and plastic wrapper. The text printed on the foil identifies this pill as a 'Twink Inducer', but it's commonly known as a 'boi pill'.
 			<br/>The packaging reads: <i>"Temporary transformative effect on cum that [style.colourSex(turns people into futanaries.)] [style.colourBad(Has a 30% chance of effect extending and mutating. Conditions unknown.)]"</i>
 		]]></description> 
 		
@@ -20,9 +20,9 @@
 		
 		<rarity>UNCOMMON</rarity> 
 		
-		<imageName>futaPill.svg</imageName> 
+		<imageName>boiPill.svg</imageName> 
 		
-		<colourPrimary>CLOTHING_GREEN</colourPrimary>
+		<colourPrimary>CLOTHING_BLUE_LIGHT</colourPrimary>
 		<colourSecondary/>
 		<colourTertiary/>
 		
@@ -47,7 +47,7 @@
 					#ELSE
 						groin, before it fades away. [npc.sheIs] left thinking that if [npc.she] were to gain a penis, [npc.she] would be able to turn others into futanaries with [npc.her] [npc.cum+]. 
 					#ENDIF
-					[##npc.addStatusEffect(SE_xys_condarbi_transformCumBoi, 21600)]
+					[##npc.addStatusEffect(SE_xys_condarbi_transformCumBoi, (60 * 60 * 24 * 3))]
 				#ENDIF
 			</p>
 		]]></applyEffects>
