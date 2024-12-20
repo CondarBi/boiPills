@@ -4,12 +4,12 @@
 		<authorTag><![CDATA["Made by Ysette's Sinful Services Pte Ltd, Pharmaeutical Branch" is written on the back of the packaging in fine print.]]></authorTag>
 		<value>500</value> 
 		<determiner><![CDATA[an]]></determiner>
-		<name><![CDATA[alpha futa pill]]></name>
-		<namePlural pluralByDefault="false"><![CDATA[alpha futa pills]]></namePlural>
+		<name><![CDATA[alpha boi pill]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[alpha boi pills]]></namePlural>
 		<description><![CDATA[
-			A small, dark green pill, individually packaged in a foil and plastic wrapper. The text printed on the foil identifies this pill as a 'Alpha Futanari Inducer', or an 'alpha futa pill' for short.
-			<br/>The packaging reads: <i>"Heavily modifies people into [style.colourSex(futanaries with temporarily transformative cum.)] [style.boldTerrible(CONSUME AT YOUR OWN RISK.)]"</i>
-		]]></description> 
+			A small, blue pill, individually packaged in a foil and plastic wrapper. The text printed on the foil identifies this pill by a long, meaningless serial number.
+			<br/>The packaging reads: <i>"In-development contagious masculinization transformative, [style.colorAndrogynous(codename 'Adonis')], version Alpha 2.15.9. [style.boldTerrible(CONSUME AT YOUR OWN RISK.)]"</i>
+		]]></description> <!-- 2 = b, 15 = o, 9 = i -->
 		
 		<useDescriptor>swallow</useDescriptor>
 		
@@ -29,8 +29,8 @@
 		<statusEffects/>
 		
 		<effectTooltipLines>
-			<line><![CDATA[Adds the [style.boldTfSex('Transformative Cum (Alpha)')] effect]]></line>
-			<line><![CDATA[[style.colourBad(Forcefully transforms)] the user into an oversexualized futanari]]></line>
+			<line><![CDATA[Adds the [style.colourExcellent('Transformative Cum (Alpha)')] effect]]></line>
+			<line><![CDATA[[style.boldTfSex(Forcefully transforms)] the user into an oversexualized twunk]]></line>
 		</effectTooltipLines>
 		
 		<applyEffects><![CDATA[
@@ -57,8 +57,8 @@
             #IF(npc.getPenisRawCumStorageValue() < CUM_PRODUCTION_SIX_EXTREME.getMedianValue())
                 [#npc.setPenisCumStorage(CUM_PRODUCTION_SIX_EXTREME.getMedianValue())]
             #ENDIF
-            #IF(npc.getPenisRawCumProductionRegenerationValue() < 5000) 
-				[#npc.setPenisCumProductionRegeneration(5000)]
+            #IF(npc.getPenisRawCumProductionRegenerationValue() < 300000)
+				[#npc.setPenisCumProductionRegeneration(300000)]
             #ENDIF
 			[##npc.fillCumToMaxStorage()]
             #IF(game.isMuskContentEnabled() && !npc.hasCumModifier(FLUID_MODIFIER_MUSKY))
@@ -76,21 +76,96 @@
 					 [npc.she] [npc.verb(let)] out [npc.a_moan+] when [npc.she] [npc.verb(realise)] that [npc.her] [npc.cum] is now [style.boldGrow(glowing)]!
 					[##npc.getCovering(BODY_COVERING_TYPE_CUM).setPrimaryGlowing(true)]
 				</p>
-			#ENDIFs
+			#ENDIF
 
-            #IF(npc.getBreastRawSizeValue() < 15)
-                [#npc.setBreastSize(15)]
+            #IF((npc.getHeightValue() < 180 || npc.getHeightValue() > 210) && !npc.isShortStature())
+                [#npc.setHeight(195)]
+            #ELSEIF(npc.getHeightValue() < 106 && npc.isShortStature())
+                [#npc.setHeight(120)]
+            #ENDIF
+            #IF(npc.getMuscleValue() < 60 && npc.getBodySize() > 60)
+                [#npc.setBodySize(BODY_SIZE_TWO_AVERAGE.getMedianValue())]
+            #ENDIF
+            #IF(npc.getMuscleValue() < 40)
+                [#npc.setMuscle(( Math.floor(Math.random() * (11 - 5) ) + 5) * 10)]
+            #ENDIF
+            #IF(npc.getFemininityValue() < FEMININITY_MASCULINE.getMedianFemininity())
+				[#npc.setFemininity(FEMININITY_MASCULINE.getMedianFemininity())]
+			#ENDIF
+			#IF(npc.getFacialHair().getValue() != 0)
+			    [#npc.setFacialHair(0)]
+			#ENDIF
+			#IF(npc.getPubicHair().getValue() != 0)
+			    [#npc.setPubicHair(0)]
+			#ENDIF
+			#IF(npc.getUnderarmHair().getValue() != 0)
+			    [#npc.setUnderarmHair(0)]
+			#ENDIF
+			#IF(npc.getAssHair().getValue() != 0)
+			    [#npc.setAssHair(0)]
+			#ENDIF
+
+            #IF(npc.getFetishDesire(FETISH_BREASTS_SELF).isNegative()
+             && npc.getBreastRawSizeValue() != 0)
+                [#npc.setBreastSize(0)]
+            #ELSEIF(npc.getFetishDesire(FETISH_BREASTS_SELF) == FETISH_DESIRE_TWO_NEUTRAL
+             && (npc.getBreastRawSizeValue() < 6
+             || npc.getBreastRawSizeValue() > 10))
+                [#npc.setBreastSize(8)]
+            #ELSEIF(npc.getFetishDesire(FETISH_BREASTS_SELF).isPositive()
+             && npc.getBreastRawSizeValue() < 9)
+                [#npc.setBreastSize(12)]
+            #ENDIF
+
+            #IF(game.isNipplePenEnabled() && npc.getBreastRawSizeValue() != 0)
+				#IF(npc.getVaginaWetness().getValue() < 0) 
+					[#npc.setVaginaWetness(5)]
+				#ENDIF
+				#IF(npc.getNippleRawCapacityValue() > 1) 
+					[#npc.setNippleElasticity(1)]
+				#ELSEIF(npc.getNippleElasticity().getValue() < 7)
+					[#npc.setNippleElasticity(7)]
+				#ENDIF
+				#IF(npc.getNipplePlasticity().getValue() > 0) 
+					[#npc.setNipplePlasticity(0)]
+				#ENDIF
+                #IF(!npc.hasNippleOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL))
+                    [#npc.addNippleOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL)]
+                #ENDIF
+            #ENDIF
+
+            #IF(npc.getHipSize().getValue() < 4 || npc.getHipSize().getValue() > 7)
+                [#npc.setHipSize(5)]
+            #ENDIF
+            #IF(npc.getAssSize().getValue() < 4 || npc.getAssSize().getValue() > 7)
+                [#npc.setAssSize(5)]
+            #ENDIF
+
+            #IF(game.isAnalContentEnabled())
+				#IF(npc.getAssWetness().getValue() < 5) 
+					[#npc.setAssWetness(5)]
+				#ENDIF
+				#IF(npc.getAssRawCapacityValue() > 1) 
+					[#npc.setAssElasticity(1)]
+				#ELSEIF(npc.getAssElasticity().getValue() < 7)
+					[#npc.setAssElasticity(7)]
+				#ENDIF
+				#IF(npc.getAssPlasticity().getValue() > 0) 
+					[#npc.setAssPlasticity(0)]
+				#ENDIF
+                #IF(!npc.hasAssOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL))
+                    [#npc.addAssOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL)]
+                #ENDIF
             #ENDIF
 
 			#IF(npc.hasVagina())
 				#IF(npc.getVaginaWetness().getValue() < 5) 
 					[#npc.setVaginaWetness(5)]
 				#ENDIF
-				#IF(npc.getVaginaElasticity().getValue() < 7) 
-					[#npc.setVaginaElasticity(7)]
-				#ENDIF
 				#IF(npc.getVaginaRawCapacityValue() > 1) 
 					[#npc.setVaginaElasticity(1)]
+				#ELSEIF(npc.getVaginaElasticity().getValue() < 7)
+					[#npc.setVaginaElasticity(7)]
 				#ENDIF
 				#IF(npc.getVaginaPlasticity().getValue() > 0) 
 					[#npc.setVaginaPlasticity(0)]
@@ -98,19 +173,27 @@
 				#IF(!npc.isVaginaSquirter()) 
 					[#npc.setVaginaSquirter(true)]
 				#ENDIF
+                #IF(!npc.hasVaginaOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL))
+                    [#npc.addVaginaOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL)]
+                #ENDIF
 			#ENDIF
 			
-			#IF(npc.getFemininityValue() < FEMININITY_FEMININE_STRONG.getMaximumFemininity())
-				[#npc.setFemininity(FEMININITY_FEMININE_STRONG.getMaximumFemininity())]
-			#ENDIF
+			
 
 			#IF(!npc.hasFetish(FETISH_CUM_STUD))
+			    [##npc.setFetishDesire(FETISH_CUM_STUD, FETISH_DESIRE_FOUR_LOVE)]
 				[#npc.addFetish(FETISH_CUM_STUD)]
 			#ENDIF
 			#IF(!npc.hasFetish(FETISH_CUM_ADDICT))
+			    [##npc.setFetishDesire(FETISH_CUM_ADDICT, FETISH_DESIRE_FOUR_LOVE)]
 				[#npc.addFetish(FETISH_CUM_ADDICT)]
 			#ENDIF
-			#IF(!npc.hasFetish(FETISH_SIZE_QUEEN))
+			#IF(!npc.hasFetish(FETISH_TRANSFORMATION_GIVING))
+			    [##npc.setFetishDesire(FETISH_TRANSFORMATION_GIVING, FETISH_DESIRE_FOUR_LOVE)]
+			    [#npc.addFetish(FETISH_TRANSFORMATION_GIVING)]
+			#ENDIF
+			#IF(game.isPenetrationLimitationsEnabled() && !npc.hasFetish(FETISH_SIZE_QUEEN))
+			    [##npc.setFetishDesire(FETISH_SIZE_QUEEN, FETISH_DESIRE_FOUR_LOVE)]
 				[#npc.addFetish(FETISH_SIZE_QUEEN)]
 			#ENDIF
 
@@ -118,7 +201,7 @@
             <p>
                 [npc.She] [npc.moans] in delight as [npc.her] body finishes its transformation into a new, more suitable form for seeding. Idly pumping [npc.her] [npc.cock+], [npc.she] [npc.verb(shudder)] as [npc.she] [npc.verb(think)] of ways in using [npc.her] [npc.cum+]'s newfound potency...
             </p>
-			[##npc.addStatusEffect(SE_xys_condarbi_transformCumBoi_alpha, 21600)]
+			[##npc.addStatusEffect(SE_xys_condarbi_transformCumBoi_alpha, (60 * 60 * 24 * 3))]
 			[##npc.removeStatusEffect(SE_xys_condarbi_transformCumBoi)]
 		]]></applyEffects>
 		
@@ -133,10 +216,10 @@
 
 	<useDescriptions>
 		<selfUse><![CDATA[
-		[npc.Name] [npc.verb(pop)] an alpha futa pill out of its little foil wrapper, before quickly placing it in [npc.her] mouth and swallowing it down.
+		[npc.Name] [npc.verb(pop)] an alpha boi pill out of its little foil wrapper, before quickly placing it in [npc.her] mouth and swallowing it down.
 		]]></selfUse>
 		<otherUse><![CDATA[
-		[npc.Name] [npc.verb(pop)] an alpha futa pill out of its little foil wrapper, before bringing it up to [npc2.namePos] [npc2.lips], forcing it into [npc2.her] mouth, and making sure that [npc2.she] [npc2.verb(swallow)] it down.
+		[npc.Name] [npc.verb(pop)] an alpha boi pill out of its little foil wrapper, before bringing it up to [npc2.namePos] [npc2.lips], forcing it into [npc2.her] mouth, and making sure that [npc2.she] [npc2.verb(swallow)] it down.
 		]]></otherUse>
 	</useDescriptions>
 </item>
