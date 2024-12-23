@@ -7,11 +7,11 @@
 	<sexEffect>true</sexEffect>
 	<name><![CDATA[Transformative Cum]]></name>
 	<description><![CDATA[
-		[npc.NamePos] cum can now [style.boldTfSex(transform people into futanaries!)]
+		[npc.NamePos] cum can now [style.boldTfSex(transform people into twinks!)]
 	]]></description>
 	<imageName>transformCum.svg</imageName>
 	<!-- https://github.com/Innoxia/liliths-throne-public/blob/dev/src/com/lilithsthrone/utils/colours/PresetColour.java -->
-	<colourPrimary>BASE_PINK_LIGHT</colourPrimary>
+	<colourPrimary>BASE_BLUE_LIGHT</colourPrimary>
 	<!-- This has to have a value defined, or else this XML file will fail to load. -->
 	<secondaryColours/><!-- This can optionally be left blank, like the 'colourTertiary' element below. -->
 	<colourTertiary/>
@@ -25,7 +25,7 @@
 	<spells/>
 	
 	<extraEffects>
-		<effect><![CDATA[[style.boldTfSex(Orgasms transform sex partners into futanaries!)]]]></effect>
+		<effect><![CDATA[[style.boldTfSex(Orgasms transform sex partners into twinks!)]]]></effect>
 	</extraEffects>
 	<applicationCondition><![CDATA[
 		false
@@ -35,8 +35,48 @@
 		#IF(game.isInSex() && npc == sex.getCharacterOrgasming() && sex.isReadyToOrgasm(npc) && npc.hasPenisIgnoreDildo() && npc.getPenisRawCumExpulsionValue() != 0)
 			[##
 				function transformCum(partner) {
-					if(partner.getTrueRace() != RACE_DEMON && !partner.isUnique() && !partner.getFetishDesire(FETISH_TRANSFORMATION_RECEIVING).isNegative()) {
+					if(partner.isAbleToHaveRaceTransformed && !partner.isUnique() && !partner.getFetishDesire(FETISH_TRANSFORMATION_RECEIVING).isNegative()) {
 						var partnerBody = partner.getTrueRace().getRacialBody();
+
+
+                        if(partner.isShortStature()) {
+                            if(partner.getHeightValue() < 106) {
+                                game.appendToTextEndStringBuilder(partner.incrementHeight(10));
+                            }
+                        } else {
+                            if(partner.getHeightValue() < 150) {
+                                game.appendToTextEndStringBuilder(partner.incrementHeight(10));
+                            } else if (partner.getHeightValue() > 200) {
+                                game.appendToTextEndStringBuilder(partner.incrementHeight(-10));
+                            } else if((partner.getHeightValue() < 160 || partner.getHeightValue() > 190)) {
+                                game.appendToTextEndStringBuilder(partner.setHeight(175));
+                            }
+                        };
+                        if(partner.getBodySize() >= 40) {
+                            game.appendToTextEndStringBuilder(partner.incrementBodySize(-25))
+                        };
+                        if(partner.getMuscleValue() >= 40) {
+                            game.appendToTextEndStringBuilder(partner.incrementMuscle(-25))
+                        };
+                        if(partner.getFemininityValue() < 25) {
+            				game.appendToTextEndStringBuilder(partner.incrementFemininity(10))
+            			} else if (partner.getFemininityValue() >= 60) {
+            			    game.appendToTextEndStringBuilder(partner.incrementFemininity(-10)
+            			} else if (partner.getFemininityValue() < 30 || partner.getFemininityValue() > 50) {
+            			    game.appendToTextEndStringBuilder(partner.setFemininity(35))
+            			};
+            			if(partner.getFacialHair().getValue() != 0) {
+            			    game.appendToTextEndStringBuilder(partner.setFacialHair(0))
+            			};
+            		    if(partner.getPubicHair().getValue() != 0) {
+            			    game.appendToTextEndStringBuilder(partner.setPubicHair(0))
+            			};
+            			if(partner.getUnderarmHair().getValue() != 0) {
+            			    game.appendToTextEndStringBuilder(partner.setUnderarmHair(0))
+            			};
+            			if(partner.getAssHair().getValue() != 0) {
+            			    game.appendToTextEndStringBuilder(partner.setAssHair(0))
+            			};
 
 						if(!partner.hasPenisIgnoreDildo())
 							game.appendToTextEndStringBuilder(partner.setPenisType(partnerBody.getPenisType()));
@@ -50,34 +90,96 @@
 							game.appendToTextEndStringBuilder(partner.incrementPenisCumProductionRegeneration(1000));
 						if(!partner.hasCumModifier(FLUID_MODIFIER_VISCOUS)) 
 							game.appendToTextEndStringBuilder(partner.addCumModifier(FLUID_MODIFIER_VISCOUS));
-						game.appendToTextEndStringBuilder(partner.incrementAttribute(ATTRIBUTE_VIRILITY, 5));
-					
-						if(!partner.hasBreasts())
-							game.appendToTextEndStringBuilder(partner.setBreastType(partnerBody.getBreastType()));
-						if(partner.getBreastRawSizeValue() < 8) 
-							game.appendToTextEndStringBuilder(partner.incrementBreastSize(1));
-					
-						if(!partner.hasVagina())
-							game.appendToTextEndStringBuilder(partner.setVaginaType(partnerBody.getVaginaType()));
-						if(partner.getVaginaWetness().getValue() < 3) 
-							game.appendToTextEndStringBuilder(partner.incrementVaginaWetness(1));
-						if(partner.getVaginaElasticity().getValue() < 7) {
-							game.appendToTextEndStringBuilder(partner.incrementVaginaElasticity(1));
-						} else if(partner.getVaginaRawCapacityValue() > 2) {
-							game.appendToTextEndStringBuilder(partner.incrementVaginaCapacity(-1, true));
-						};
-						if(partner.getVaginaPlasticity().getValue() > 0)
-							game.appendToTextEndStringBuilder(partner.incrementVaginaPlasticity(-1));
-						if(partner.getVaginaDepth().getValue() < 2)
-							game.appendToTextEndStringBuilder(partner.incrementVaginaDepth(1));
-						if(!partner.isVaginaSquirter()) 
-							game.appendToTextEndStringBuilder(partner.setVaginaSquirter(true));
-						game.appendToTextEndStringBuilder(partner.incrementAttribute(ATTRIBUTE_FERTILITY, 5));
-					
-						if(!partner.getFemininityValue() < FEMININITY_FEMININE.getMedianFemininity())
-							game.appendToTextEndStringBuilder(partner.incrementFemininity(5));
+						if(partner.getAttributeValue(ATTRIBUTE_VIRILITY) < 100)
+    						game.appendToTextEndStringBuilder(partner.incrementAttribute(ATTRIBUTE_VIRILITY, 5));
+						
+						
+						
+						        
+                        if(partner.getHipSize().getValue() < 3) {
+                            game.appendToTextEndStringBuilder(partner.incrementHipSize(1));
+                        }
+                        if(partner.getAssSize().getValue() < 3) {
+                            game.appendToTextEndStringBuilder(partner.incrementAssSize(1));
+                        }
 
-						if(!partner.hasFetish(FETISH_CUM_ADDICT)){
+                        if(game.isAnalContentEnabled()) {
+		                    if(partner.getAssWetness().getValue() < 5) {
+			                    game.appendToTextEndStringBuilder(partner.setAssWetness(5));
+		                    }
+		                    if(partner.getAssRawCapacityValue() > 1) {
+			                    game.appendToTextEndStringBuilder(partner.setAssElasticity(1));
+		                    } else if(partner.getAssElasticity().getValue() < 7) {
+			                    game.appendToTextEndStringBuilder(partner.setAssElasticity(7));
+		                    }
+		                    if(partner.getAssPlasticity().getValue() > 0) {
+			                    game.appendToTextEndStringBuilder(partner.setAssPlasticity(0));
+		                    }
+                            if(!partner.hasAssOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL)) {
+                                game.appendToTextEndStringBuilder(partner.addAssOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL));
+                            }
+                        }
+
+	                    if(partner.hasVagina()) {
+		                    if(partner.getVaginaWetness().getValue() < 5) {
+			                    game.appendToTextEndStringBuilder(partner.setVaginaWetness(5));
+		                    }
+		                    if(partner.getVaginaRawCapacityValue() > 1) {
+			                    game.appendToTextEndStringBuilder(partner.setVaginaElasticity(1));
+		                    } else if(partner.getVaginaElasticity().getValue() < 7) {
+			                    game.appendToTextEndStringBuilder(partner.setVaginaElasticity(7));
+		                    }
+		                    if(partner.getVaginaPlasticity().getValue() > 0) {
+			                    game.appendToTextEndStringBuilder(partner.setVaginaPlasticity(0));
+		                    }
+		                    if(!partner.isVaginaSquirter()) {
+			                    game.appendToTextEndStringBuilder(partner.setVaginaSquirter(true));
+		                    }
+                            if(!partner.hasVaginaOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL)) {
+                                game.appendToTextEndStringBuilder(partner.addVaginaOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL));
+                            }
+	                    }
+            
+
+						
+						
+					
+						
+						
+						
+						
+				        if(partner.getFetishDesire(FETISH_BREASTS_SELF).isNegative()
+                         && partner.getBreastRawSizeValue() != 0) {
+                            game.appendToTextEndStringBuilder(partner.setBreastSize(0));
+                        } else if(partner.getFetishDesire(FETISH_BREASTS_SELF) == FETISH_DESIRE_TWO_NEUTRAL
+                         && (partner.getBreastRawSizeValue() < 6
+                         || partner.getBreastRawSizeValue() > 10)) {
+                            game.appendToTextEndStringBuilder(partner.setBreastSize(8));
+                        } else if(partner.getFetishDesire(FETISH_BREASTS_SELF).isPositive()
+                         && partner.getBreastRawSizeValue() < 9) {
+                            game.appendToTextEndStringBuilder(partner.setBreastSize(12));
+                        }
+
+                        if(game.isNipplePenEnabled() && partner.getBreastRawSizeValue() != 0) {
+		                    if(partner.getVaginaWetness().getValue() < 0) {
+			                    game.appendToTextEndStringBuilder(partner.setVaginaWetness(5));
+		                    }
+		                    if(partner.getNippleRawCapacityValue() > 1) {
+			                    game.appendToTextEndStringBuilder(partner.setNippleElasticity(1));
+		                    } else if(partner.getNippleElasticity().getValue() < 7) {
+			                    game.appendToTextEndStringBuilder(partner.setNippleElasticity(7));
+		                    }
+		                    if(partner.getNipplePlasticity().getValue() > 0) {
+			                    game.appendToTextEndStringBuilder(partner.setNipplePlasticity(0));
+		                    }
+                            if(!partner.hasNippleOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL)) {
+                                game.appendToTextEndStringBuilder(partner.addNippleOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL));
+                            }
+                        }
+						
+
+						if(!partner.hasFetish(FETISH_CUM_ADDICT)) {
+						    partner.setFetishDesire(FETISH_TRANSFORMATION_GIVING, FETISH_DESIRE_FOUR_LOVE);
 							game.appendToTextEndStringBuilder(partner.addFetish(FETISH_CUM_ADDICT));
 						};
 					};
@@ -96,7 +198,7 @@
 	<applyRemovalEffect><![CDATA[
 		#IF(!npc.hasStatusEffect(SE_xys_condarbi_transformCumBoi_alpha) && npc.hasPenisIgnoreDildo() && npc.getPenisRawCumStorageValue() >= 2000 && npc.hasFetish(FETISH_CUM_STUD) && npc.hasFetish(FETISH_TRANSFORMATION_GIVING) && Math.random() < 0.3)
 			<p>
-                [npc.Name] can't get enough of it, the feeling of turning people [npc.she] [npc.verb(cum)] on into futas. As [npc.she] 
+                [npc.Name] can't get enough of it, the feeling of turning people [npc.she] [npc.verb(cum)] on into twinks. As [npc.she] 
                 #IF(npc.isCoverableAreaExposed(CA_PENIS))
                     [npc.verb(stroke)] [npc.her] [npc.cock+], 
                 #ELSE
@@ -104,7 +206,7 @@
                 #ENDIF
                 thinking about the people [npc.sheHas] transformed so far, [npc.she] can't help but want <b>more...</b>
             <p>
-                [npc.She] [npc.verb(feel)] [npc.her] body starting to react back to those desires, to spread [npc.her] seed far and wide, to turn people into just like [npc.herHim]... [style.boldTfSex(to dye this world in [npc.her] colours!)]
+                [npc.She] [npc.verb(feel)] [npc.her] body starting to react back to those desires, to spread [npc.her] seed far and wide, to make people just like [npc.herHim]... [style.boldTfSex(to dye this world in [npc.her] colours!)]
             </p>
 
             #IF(npc.getPenisRawSizeValue() < PENIS_LENGTH_FIVE_ENORMOUS.getMedianValue())
@@ -116,8 +218,8 @@
             #IF(npc.getPenisRawCumStorageValue() < CUM_PRODUCTION_SIX_EXTREME.getMedianValue())
                 [#npc.setPenisCumStorage(CUM_PRODUCTION_SIX_EXTREME.getMedianValue())]
             #ENDIF
-            #IF(npc.getPenisRawCumProductionRegenerationValue() < 5000) 
-				[#npc.setPenisCumProductionRegeneration(5000)]
+            #IF(npc.getPenisRawCumProductionRegenerationValue() < 300000) 
+				[#npc.setPenisCumProductionRegeneration(300000)]
             #ENDIF
 			[##npc.fillCumToMaxStorage()]
             #IF(game.isMuskContentEnabled() && !npc.hasCumModifier(FLUID_MODIFIER_MUSKY))
@@ -137,19 +239,95 @@
 				</p>
 			#ENDIF
 
-            #IF(npc.getBreastRawSizeValue() < 15)
-                [#npc.setBreastSize(15)]
+			
+            #IF((npc.getHeightValue() < 180 || npc.getHeightValue() > 210) && !npc.isShortStature())
+                [#npc.setHeight(195)]
+            #ELSEIF(npc.getHeightValue() < 106 && npc.isShortStature())
+                [#npc.setHeight(120)]
+            #ENDIF
+            #IF(npc.getMuscleValue() < 60 && npc.getBodySize() > 60)
+                [#npc.setBodySize(BODY_SIZE_TWO_AVERAGE.getMedianValue())]
+            #ENDIF
+            #IF(npc.getMuscleValue() < 40)
+                [#npc.setMuscle(( Math.floor(Math.random() * (11 - 5) ) + 5) * 10)]
+            #ENDIF
+            #IF(npc.getFemininityValue() < FEMININITY_MASCULINE.getMedianFemininity())
+				[#npc.setFemininity(FEMININITY_MASCULINE.getMedianFemininity())]
+			#ENDIF
+			#IF(npc.getFacialHair().getValue() != 0)
+			    [#npc.setFacialHair(0)]
+			#ENDIF
+			#IF(npc.getPubicHair().getValue() != 0)
+			    [#npc.setPubicHair(0)]
+			#ENDIF
+			#IF(npc.getUnderarmHair().getValue() != 0)
+			    [#npc.setUnderarmHair(0)]
+			#ENDIF
+			#IF(npc.getAssHair().getValue() != 0)
+			    [#npc.setAssHair(0)]
+			#ENDIF
+
+            #IF(npc.getFetishDesire(FETISH_BREASTS_SELF).isNegative()
+             && npc.getBreastRawSizeValue() != 0)
+                [#npc.setBreastSize(0)]
+            #ELSEIF(npc.getFetishDesire(FETISH_BREASTS_SELF) == FETISH_DESIRE_TWO_NEUTRAL
+             && (npc.getBreastRawSizeValue() < 6
+             || npc.getBreastRawSizeValue() > 10))
+                [#npc.setBreastSize(8)]
+            #ELSEIF(npc.getFetishDesire(FETISH_BREASTS_SELF).isPositive()
+             && npc.getBreastRawSizeValue() < 9)
+                [#npc.setBreastSize(12)]
+            #ENDIF
+
+            #IF(game.isNipplePenEnabled() && npc.getBreastRawSizeValue() != 0)
+				#IF(npc.getVaginaWetness().getValue() < 0) 
+					[#npc.setVaginaWetness(5)]
+				#ENDIF
+				#IF(npc.getNippleRawCapacityValue() > 1) 
+					[#npc.setNippleElasticity(1)]
+				#ELSEIF(npc.getNippleElasticity().getValue() < 7)
+					[#npc.setNippleElasticity(7)]
+				#ENDIF
+				#IF(npc.getNipplePlasticity().getValue() > 0) 
+					[#npc.setNipplePlasticity(0)]
+				#ENDIF
+                #IF(!npc.hasNippleOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL))
+                    [#npc.addNippleOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL)]
+                #ENDIF
+            #ENDIF
+
+            #IF(npc.getHipSize().getValue() < 4 || npc.getHipSize().getValue() > 7)
+                [#npc.setHipSize(5)]
+            #ENDIF
+            #IF(npc.getAssSize().getValue() < 4 || npc.getAssSize().getValue() > 7)
+                [#npc.setAssSize(5)]
+            #ENDIF
+
+            #IF(game.isAnalContentEnabled())
+				#IF(npc.getAssWetness().getValue() < 5) 
+					[#npc.setAssWetness(5)]
+				#ENDIF
+				#IF(npc.getAssRawCapacityValue() > 1) 
+					[#npc.setAssElasticity(1)]
+				#ELSEIF(npc.getAssElasticity().getValue() < 7)
+					[#npc.setAssElasticity(7)]
+				#ENDIF
+				#IF(npc.getAssPlasticity().getValue() > 0) 
+					[#npc.setAssPlasticity(0)]
+				#ENDIF
+                #IF(!npc.hasAssOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL))
+                    [#npc.addAssOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL)]
+                #ENDIF
             #ENDIF
 
 			#IF(npc.hasVagina())
 				#IF(npc.getVaginaWetness().getValue() < 5) 
 					[#npc.setVaginaWetness(5)]
 				#ENDIF
-				#IF(npc.getVaginaElasticity().getValue() < 7) 
-					[#npc.setVaginaElasticity(7)]
-				#ENDIF
 				#IF(npc.getVaginaRawCapacityValue() > 1) 
 					[#npc.setVaginaElasticity(1)]
+				#ELSEIF(npc.getVaginaElasticity().getValue() < 7)
+					[#npc.setVaginaElasticity(7)]
 				#ENDIF
 				#IF(npc.getVaginaPlasticity().getValue() > 0) 
 					[#npc.setVaginaPlasticity(0)]
@@ -157,25 +335,34 @@
 				#IF(!npc.isVaginaSquirter()) 
 					[#npc.setVaginaSquirter(true)]
 				#ENDIF
+                #IF(!npc.hasVaginaOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL))
+                    [#npc.addVaginaOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL)]
+                #ENDIF
 			#ENDIF
-
-			#IF(npc.getFemininityValue() < FEMININITY_FEMININE_STRONG.getMaximumFemininity())
-				[#npc.setFemininity(FEMININITY_FEMININE_STRONG.getMaximumFemininity())]
-			#ENDIF
+			
+			
 
 			#IF(!npc.hasFetish(FETISH_CUM_STUD))
+			    [##npc.setFetishDesire(FETISH_CUM_STUD, FETISH_DESIRE_FOUR_LOVE)]
 				[#npc.addFetish(FETISH_CUM_STUD)]
 			#ENDIF
 			#IF(!npc.hasFetish(FETISH_CUM_ADDICT))
+			    [##npc.setFetishDesire(FETISH_CUM_ADDICT, FETISH_DESIRE_FOUR_LOVE)]
 				[#npc.addFetish(FETISH_CUM_ADDICT)]
 			#ENDIF
-			#IF(!npc.hasFetish(FETISH_SIZE_QUEEN))
+			#IF(!npc.hasFetish(FETISH_TRANSFORMATION_GIVING))
+			    [##npc.setFetishDesire(FETISH_TRANSFORMATION_GIVING, FETISH_DESIRE_FOUR_LOVE)]
+			    [#npc.addFetish(FETISH_TRANSFORMATION_GIVING)]
+			#ENDIF
+			#IF(game.isPenetrationLimitationsEnabled() && !npc.hasFetish(FETISH_SIZE_QUEEN))
+			    [##npc.setFetishDesire(FETISH_SIZE_QUEEN, FETISH_DESIRE_FOUR_LOVE)]
 				[#npc.addFetish(FETISH_SIZE_QUEEN)]
 			#ENDIF
+
             <p>
                 [npc.A_moan] escapes [npc.her] [npc.lips] as [npc.her] body finishes its transformation into a new, more suitable form for seeding. Idly stroking [npc.her] [npc.cock+], [npc.she] [npc.verb(shudder)] in delight as [npc.she] [npc.verb(think)] of ways in using [npc.her] [npc.cum+]'s newfound potency...
             </p>
-            [##npc.addStatusEffect(SE_xys_condarbi_transformCumBoi_alpha, 21600)]
+            [##npc.addStatusEffect(SE_xys_condarbi_transformCumBoi_alpha, (60 * 60 * 24 * 7))]
         #ENDIF
 	]]></applyRemovalEffect>
 	
