@@ -169,12 +169,12 @@
 			                    game.appendToTextEndStringBuilder(partner.setBreastMilkStorage(20));
 		                    }
 		                    if(partner.getNippleRawCapacityValue() > 1) {
-			                    game.appendToTextEndStringBuilder(partner.setNippleElasticity(1));
+			                    game.appendToTextEndStringBuilder(partner.incrementNippleElasticity(-1));
 		                    } else if(partner.getNippleElasticity().getValue() < 7) {
-			                    game.appendToTextEndStringBuilder(partner.setNippleElasticity(7));
+			                    game.appendToTextEndStringBuilder(partner.incrementNippleElasticity(1));
 		                    }
 		                    if(partner.getNipplePlasticity().getValue() > 0) {
-			                    game.appendToTextEndStringBuilder(partner.setNipplePlasticity(0));
+			                    game.appendToTextEndStringBuilder(partner.incrementNipplePlasticity(-1));
 		                    }
                             if(!partner.hasNippleOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL)) {
                                 game.appendToTextEndStringBuilder(partner.addNippleOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL));
