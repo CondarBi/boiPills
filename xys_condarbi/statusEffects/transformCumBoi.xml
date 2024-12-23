@@ -161,8 +161,12 @@
                         }
 
                         if(game.isNipplePenEnabled() && partner.getBreastRawSizeValue() != 0) {
-		                    if(partner.getVaginaWetness().getValue() < 0) {
-			                    game.appendToTextEndStringBuilder(partner.setVaginaWetness(5));
+                            if(partner.getFetishDesire(FETISH_LACTATION_SELF) == FETISH_DESIRE_FOUR_LOVE
+                             && partner.getBreastRawMilkStorageValue() < 900) {
+                                game.appendToTextEndStringBuilder(partner.incrementBreastMilkStorage(100);
+		                    } else if(!partner.getFetishDesire(FETISH_LACTATION_SELF).isNegative() 
+		                     && partner.getBreastRawMilkStorageValue() < 20) {
+			                    game.appendToTextEndStringBuilder(partner.setBreastMilkStorage(20));
 		                    }
 		                    if(partner.getNippleRawCapacityValue() > 1) {
 			                    game.appendToTextEndStringBuilder(partner.setNippleElasticity(1));
