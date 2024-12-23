@@ -89,8 +89,8 @@
             #IF(npc.getMuscleValue() < 40)
                 [#npc.setMuscle(( Math.floor(Math.random() * (11 - 5) ) + 5) * 10)]
             #ENDIF
-            #IF(npc.getFemininityValue() < FEMININITY_MASCULINE.getMedianFemininity())
-				[#npc.setFemininity(FEMININITY_MASCULINE.getMedianFemininity())]
+            #IF(npc.getFemininityValue() < 30 || npc.getFemininityValue() > 55)
+				[#npc.setFemininity(30)]
 			#ENDIF
 			#IF(npc.getFacialHair().getValue() != 0)
 			    [#npc.setFacialHair(0)]
