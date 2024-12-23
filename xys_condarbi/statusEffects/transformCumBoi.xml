@@ -59,12 +59,12 @@
                             game.appendToTextEndStringBuilder(partner.incrementMuscle(-25))
                         };
                         if(partner.getFemininityValue() < 25) {
-            				game.appendToTextEndStringBuilder(partner.incrementFemininity(10))
-            			} else if (partner.getFemininityValue() >= 60) {
-            			    game.appendToTextEndStringBuilder(partner.incrementFemininity(-10)
-            			} else if (partner.getFemininityValue() < 30 || partner.getFemininityValue() > 50) {
-            			    game.appendToTextEndStringBuilder(partner.setFemininity(35))
-            			};
+                        	game.appendToTextEndStringBuilder(partner.incrementFemininity(10))
+                        } else if (partner.getFemininityValue() >= 60) {
+                            game.appendToTextEndStringBuilder(partner.incrementFemininity(-10))
+                        } else if (partner.getFemininityValue() < 30 || partner.getFemininityValue() > 50) {
+                            game.appendToTextEndStringBuilder(partner.setFemininity(35))
+                        };
             			if(partner.getFacialHair().getValue() != 0) {
             			    game.appendToTextEndStringBuilder(partner.setFacialHair(0))
             			};
