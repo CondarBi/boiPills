@@ -66,16 +66,16 @@
                             game.appendToTextEndStringBuilder(partner.setFemininity(35))
                         };
             			if(partner.getFacialHair().getValue() != 0) {
-            			    game.appendToTextEndStringBuilder(partner.setFacialHair(0))
+            			    game.appendToTextEndStringBuilder(partner.incrementFacialHair(-1))
             			};
             		    if(partner.getPubicHair().getValue() != 0) {
-            			    game.appendToTextEndStringBuilder(partner.setPubicHair(0))
+            			    game.appendToTextEndStringBuilder(partner.incrementPubicHair(-1))
             			};
             			if(partner.getUnderarmHair().getValue() != 0) {
-            			    game.appendToTextEndStringBuilder(partner.setUnderarmHair(0))
+            			    game.appendToTextEndStringBuilder(partner.incrementUnderarmHair(-1))
             			};
             			if(partner.getAssHair().getValue() != 0) {
-            			    game.appendToTextEndStringBuilder(partner.setAssHair(0))
+            			    game.appendToTextEndStringBuilder(partner.incrementAssHair(-1))
             			};
 
 						if(!partner.hasPenisIgnoreDildo())
