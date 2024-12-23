@@ -105,35 +105,6 @@
 			    [#npc.setAssHair(0)]
 			#ENDIF
 
-            #IF(npc.getFetishDesire(FETISH_BREASTS_SELF).isNegative()
-             && npc.getBreastRawSizeValue() != 0)
-                [#npc.setBreastSize(0)]
-            #ELSEIF(npc.getFetishDesire(FETISH_BREASTS_SELF) == FETISH_DESIRE_TWO_NEUTRAL
-             && (npc.getBreastRawSizeValue() < 6
-             || npc.getBreastRawSizeValue() > 10))
-                [#npc.setBreastSize(8)]
-            #ELSEIF(npc.getFetishDesire(FETISH_BREASTS_SELF).isPositive()
-             && npc.getBreastRawSizeValue() < 9)
-                [#npc.setBreastSize(12)]
-            #ENDIF
-
-            #IF(game.isNipplePenEnabled() && npc.getBreastRawSizeValue() != 0)
-				#IF(npc.getVaginaWetness().getValue() < 0) 
-					[#npc.setVaginaWetness(5)]
-				#ENDIF
-				#IF(npc.getNippleRawCapacityValue() > 1) 
-					[#npc.setNippleElasticity(1)]
-				#ELSEIF(npc.getNippleElasticity().getValue() < 7)
-					[#npc.setNippleElasticity(7)]
-				#ENDIF
-				#IF(npc.getNipplePlasticity().getValue() > 0) 
-					[#npc.setNipplePlasticity(0)]
-				#ENDIF
-                #IF(!npc.hasNippleOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL))
-                    [#npc.addNippleOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL)]
-                #ENDIF
-            #ENDIF
-
             #IF(npc.getHipSize().getValue() < 4 || npc.getHipSize().getValue() > 7)
                 [#npc.setHipSize(5)]
             #ENDIF
@@ -177,6 +148,35 @@
                     [#npc.addVaginaOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL)]
                 #ENDIF
 			#ENDIF
+
+            #IF(npc.getFetishDesire(FETISH_BREASTS_SELF).isNegative()
+             && npc.getBreastRawSizeValue() != 0)
+                [#npc.setBreastSize(0)]
+            #ELSEIF(npc.getFetishDesire(FETISH_BREASTS_SELF) == FETISH_DESIRE_TWO_NEUTRAL
+             && (npc.getBreastRawSizeValue() < 6
+             || npc.getBreastRawSizeValue() > 10))
+                [#npc.setBreastSize(8)]
+            #ELSEIF(npc.getFetishDesire(FETISH_BREASTS_SELF).isPositive()
+             && npc.getBreastRawSizeValue() < 9)
+                [#npc.setBreastSize(12)]
+            #ENDIF
+
+            #IF(game.isNipplePenEnabled() && npc.getBreastRawSizeValue() != 0)
+				#IF(npc.getVaginaWetness().getValue() < 0) 
+					[#npc.setVaginaWetness(5)]
+				#ENDIF
+				#IF(npc.getNippleRawCapacityValue() > 1) 
+					[#npc.setNippleElasticity(1)]
+				#ELSEIF(npc.getNippleElasticity().getValue() < 7)
+					[#npc.setNippleElasticity(7)]
+				#ENDIF
+				#IF(npc.getNipplePlasticity().getValue() > 0) 
+					[#npc.setNipplePlasticity(0)]
+				#ENDIF
+                #IF(!npc.hasNippleOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL))
+                    [#npc.addNippleOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL)]
+                #ENDIF
+            #ENDIF
 			
 			
 
