@@ -163,7 +163,7 @@
                         if(game.isNipplePenEnabled() && partner.getBreastRawSizeValue() != 0) {
                             if(partner.getFetishDesire(FETISH_LACTATION_SELF) == FETISH_DESIRE_FOUR_LOVE
                              && partner.getBreastRawMilkStorageValue() < 900) {
-                                game.appendToTextEndStringBuilder(partner.incrementBreastMilkStorage(100);
+                                game.appendToTextEndStringBuilder(partner.incrementBreastMilkStorage(100));
 		                    } else if(!partner.getFetishDesire(FETISH_LACTATION_SELF).isNegative() 
 		                     && partner.getBreastRawMilkStorageValue() < 20) {
 			                    game.appendToTextEndStringBuilder(partner.setBreastMilkStorage(20));
