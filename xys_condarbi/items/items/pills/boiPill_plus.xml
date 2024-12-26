@@ -163,8 +163,8 @@
 
             #IF(game.isNipplePenEnabled() && npc.getBreastRawSizeValue() != 0)
                 #IF(npc.getFetishDesire(FETISH_LACTATION_SELF) == FETISH_DESIRE_FOUR_LOVE
-                 && partner.getBreastRawMilkStorageValue() < 900)
-                    [#npc.incrementBreastMilkStorage(100)]
+                 && npc.getBreastRawMilkStorageValue() < 1000)
+                    [#npc.setBreastMilkStorage(1500)]
                 #ELSEIF(!npc.getFetishDesire(FETISH_LACTATION_SELF).isNegative()
                  && npc.getBreastRawMilkStorageValue() < 20)
                     [#npc.setBreastMilkStorage(20)]
