@@ -7,7 +7,7 @@
 	<sexEffect>true</sexEffect>
 	<name><![CDATA[Transformative Cum]]></name>
 	<description><![CDATA[
-		[npc.NamePos] cum can now [style.boldTfSex(transform people into twinks!)]
+		[npc.NamePos] cum is infused with potent transformative magic, and can now [style.boldTfSex(transform people into twinks!)]
 	]]></description>
 	<imageName>transformCum.svg</imageName>
 	<!-- https://github.com/Innoxia/liliths-throne-public/blob/dev/src/com/lilithsthrone/utils/colours/PresetColour.java -->
