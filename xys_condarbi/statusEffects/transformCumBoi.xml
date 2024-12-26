@@ -78,6 +78,7 @@
             			    game.appendToTextEndStringBuilder(partner.incrementAssHair(-1))
             			};
 
+
 						if(!partner.hasPenisIgnoreDildo())
 							game.appendToTextEndStringBuilder(partner.setPenisType(partnerBody.getPenisType()));
 						if(partner.getPenisRawSizeValue() < PENIS_LENGTH_THREE_LARGE.getMedianValue()) 
@@ -92,10 +93,8 @@
 							game.appendToTextEndStringBuilder(partner.addCumModifier(FLUID_MODIFIER_VISCOUS));
 						if(partner.getAttributeValue(ATTRIBUTE_VIRILITY) < 100)
     						game.appendToTextEndStringBuilder(partner.incrementAttribute(ATTRIBUTE_VIRILITY, 5));
-						
-						
-						
-						        
+
+
                         if(partner.getHipSize().getValue() < 3) {
                             game.appendToTextEndStringBuilder(partner.incrementHipSize(1));
                         }
@@ -139,15 +138,8 @@
                                 game.appendToTextEndStringBuilder(partner.addVaginaOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL));
                             }
 	                    }
-            
 
-						
-						
-					
-						
-						
-						
-						
+
 				        if(partner.getFetishDesire(FETISH_BREASTS_SELF).getValue() <= 2
                          && partner.getBreastRawSizeValue() != 0) {
                             game.appendToTextEndStringBuilder(partner.incrementBreastSize(-5));
@@ -180,7 +172,7 @@
                                 game.appendToTextEndStringBuilder(partner.addNippleOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL));
                             }
                         }
-						
+
 
 						if(!partner.hasFetish(FETISH_CUM_ADDICT)) {
 						    partner.setFetishDesire(FETISH_TRANSFORMATION_GIVING, FETISH_DESIRE_FOUR_LOVE);
