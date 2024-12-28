@@ -51,8 +51,8 @@
 			#IF(npc.getPenisRawSizeValue() < PENIS_LENGTH_FIVE_ENORMOUS.getMedianValue())
                 [#npc.setPenisSize(PENIS_LENGTH_FIVE_ENORMOUS.getMedianValue())]
             #ENDIF
-            #IF(npc.getTesticleSize().getValue() < 7)
-                [#npc.setTesticleSize(7)]
+            #IF(npc.getTesticleSize().getValue() < 5)
+                [#npc.setTesticleSize(5)]
             #ENDIF
             #IF(npc.getPenisRawCumStorageValue() < CUM_PRODUCTION_SIX_EXTREME.getMedianValue())
                 [#npc.setPenisCumStorage(CUM_PRODUCTION_SIX_EXTREME.getMedianValue())]
