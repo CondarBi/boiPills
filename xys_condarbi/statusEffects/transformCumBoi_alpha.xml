@@ -41,10 +41,18 @@ people into oversexualized twunks!)]
 						var targetBody = npc.getTrueRace().getRacialBody();
 
 
-                        if((partner.getHeightValue() < 180 || partner.getHeightValue() > 210) && !partner.isShortStature()) {
-                            game.appendToTextEndStringBuilder(partner.setHeight(195))
-                        } else if (partner.getHeightValue() < 106 && partner.isShortStature()) {
-                            game.appendToTextEndStringBuilder(partner.setHeight(120))
+                        if(partner.isShortStature()) {
+                            if(partner.getHeightValue() < 106) {
+                                game.appendToTextEndStrinkBuilder(partner.incrementHeight(10))
+                            }
+                        } else {
+                            if(partner.getHeightValue() < 170) {
+                                game.appendToTextEndStringBuilder(partner.incrementHeight(10))
+                            } else if (partner.getHeightValue() > 220) {
+                                game.appendToTextEndStringBuilder(partner.incrementHeight(-10))
+                            } else if ((partner.getHeightValue() < 180 || partner.getHeightValue() > 210) && !partner.isShortStature()) {
+                                game.appendToTextEndStringBuilder(partner.setHeight(195))
+                            }
                         }
                         if(partner.getMuscleValue() < 60 && partner.getBodySize() > 60) {
                             game.appendToTextEndStringBuilder(partner.setBodySize(BODY_SIZE_TWO_AVERAGE.getMedianValue()))
@@ -52,20 +60,24 @@ people into oversexualized twunks!)]
                         if(partner.getMuscleValue() < 40) {
                             game.appendToTextEndStringBuilder(partner.setMuscle(( Math.floor(Math.random() * (11 - 5) ) + 5) * 10))
                         }
-                        if(partner.getFemininityValue() < 30 || partner.getFemininityValue() > 55) {
-				            game.appendToTextEndStringBuilder(partner.setFemininity(30))
-			            }
+                        if(partner.getFemininityValue() < 25) {
+                            game.appendToTextEndStringBuilder(partner.incrementFemininity(10))
+                        } else if (partner.getFemininityValue() >= 60) {
+                            game.appendToTextEndStringBuilder(partner.incrementFemininity(-10))
+                        } else if (partner.getFemininityValue() < 30 || partner.getFemininityValue() > 50) {
+                            game.appendToTextEndStringBuilder(partner.setFemininity(35))
+                        };
 			            if(partner.getFacialHair().getValue() != 0) {
-			                game.appendToTextEndStringBuilder(partner.setFacialHair(0))
+			                game.appendToTextEndStringBuilder(partner.incrementFacialHair(-1))
 			            }
 			            if(partner.getPubicHair().getValue() != 0) {
-			                game.appendToTextEndStringBuilder(partner.setPubicHair(0))
+			                game.appendToTextEndStringBuilder(partner.incrementPubicHair(-1))
 			            }
 			            if(partner.getUnderarmHair().getValue() != 0) {
-			                game.appendToTextEndStringBuilder(partner.setUnderarmHair(0))
+			                game.appendToTextEndStringBuilder(partner.incrementUnderarmHair(-1))
 			            }
 			            if(partner.getAssHair().getValue() != 0) {
-			                game.appendToTextEndStringBuilder(partner.setAssHair(0))
+			                game.appendToTextEndStringBuilder(partner.incrementAssHair(-1))
 			            }
 			            
 			            
