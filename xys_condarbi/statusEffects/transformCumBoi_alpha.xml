@@ -85,16 +85,16 @@ people into oversexualized twunks!)]
 				            game.appendToTextEndStringBuilder(partner.setPenisType(partner.getRace().getRacialBody().getPenisType()))
 			            }
 			            if(partner.getPenisRawSizeValue() < PENIS_LENGTH_FIVE_ENORMOUS.getMedianValue()) {
-                            game.appendToTextEndStringBuilder(partner.setPenisSize(PENIS_LENGTH_FIVE_ENORMOUS.getMedianValue()))
+                            game.appendToTextEndStringBuilder(partner.incrementPenisSize(5))
                         }
-                        if(partner.getTesticleSize().getValue() < 7) {
-                            game.appendToTextEndStringBuilder(partner.setTesticleSize(7))
+                        if(partner.getTesticleSize().getValue() < 5) {
+                            game.appendToTextEndStringBuilder(partner.incrementTesticleSize(1))
                         }
                         if(partner.getPenisRawCumStorageValue() < CUM_PRODUCTION_SIX_EXTREME.getMedianValue()) {
-                            game.appendToTextEndStringBuilder(partner.setPenisCumStorage(CUM_PRODUCTION_SIX_EXTREME.getMedianValue()))
+                            game.appendToTextEndStringBuilder(partner.incrementPenisCumStorage(100))
                         }
                         if(partner.getPenisRawCumProductionRegenerationValue() < 300000) {
-				            game.appendToTextEndStringBuilder(partner.setPenisCumProductionRegeneration(300000))
+				            game.appendToTextEndStringBuilder(partner.incrementPenisCumProductionRegeneration(5000))
                         }
 			            partner.fillCumToMaxStorage();
                         if(game.isMuskContentEnabled() && !partner.hasCumModifier(FLUID_MODIFIER_MUSKY)) {
@@ -108,24 +108,28 @@ people into oversexualized twunks!)]
                         }
 
 
-                        if(partner.getHipSize().getValue() < 4 || partner.getHipSize().getValue() > 7) {
+                        if(partner.getHipSize().getValue() = 3) {
                             game.appendToTextEndStringBuilder(partner.setHipSize(5))
+                        } else if (partner.getHipSize().getValue() < 4) {
+                            game.appendToTextEndStringBuilder(partner.incrementHipSize(1))
                         }
-                        if(partner.getAssSize().getValue() < 4 || partner.getAssSize().getValue() > 7) {
+                        if(partner.getAssSize().getValue() = 3) {
                             game.appendToTextEndStringBuilder(partner.setAssSize(5))
+                        } else if (partner.getAssSize().getValue() < 4) {
+                            game.appendToTextEndStringBuilder(partner.incrementAssSize(1))
                         }
 
                         if(game.isAnalContentEnabled()) {
 				            if(partner.getAssWetness().getValue() < 5) {
-					            game.appendToTextEndStringBuilder(partner.setAssWetness(5))
+					            game.appendToTextEndStringBuilder(partner.incrementAssWetness(1))
 				            }
 				            if(partner.getAssRawCapacityValue() > 1) {
-					            game.appendToTextEndStringBuilder(partner.setAssElasticity(1))
+					            game.appendToTextEndStringBuilder(partner.incrementAssElasticity(-1))
 				            } else if (partner.getAssElasticity().getValue() < 7) {
-					            game.appendToTextEndStringBuilder(partner.setAssElasticity(7))
+					            game.appendToTextEndStringBuilder(partner.incrementAssElasticity(1))
 				            }
 				            if(partner.getAssPlasticity().getValue() > 0) {
-					            game.appendToTextEndStringBuilder(partner.setAssPlasticity(0))
+					            game.appendToTextEndStringBuilder(partner.incrementAssPlasticity(-1))
 				            }
                             if(!partner.hasAssOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL)) {
                                 game.appendToTextEndStringBuilder(partner.addAssOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL))
