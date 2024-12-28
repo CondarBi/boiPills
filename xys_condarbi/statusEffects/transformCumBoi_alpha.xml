@@ -41,32 +41,6 @@ people into oversexualized twunks!)]
 						var targetBody = npc.getTrueRace().getRacialBody();
 
 
-			            if(!partner.hasPenisIgnoreDildo()) {
-				            game.appendToTextEndStringBuilder(partner.setPenisType(partner.getRace().getRacialBody().getPenisType()))
-			            }
-			            if(partner.getPenisRawSizeValue() < PENIS_LENGTH_FIVE_ENORMOUS.getMedianValue()) {
-                            game.appendToTextEndStringBuilder(partner.setPenisSize(PENIS_LENGTH_FIVE_ENORMOUS.getMedianValue()))
-                        }
-                        if(partner.getTesticleSize().getValue() < 7) {
-                            game.appendToTextEndStringBuilder(partner.setTesticleSize(7))
-                        }
-                        if(partner.getPenisRawCumStorageValue() < CUM_PRODUCTION_SIX_EXTREME.getMedianValue()) {
-                            game.appendToTextEndStringBuilder(partner.setPenisCumStorage(CUM_PRODUCTION_SIX_EXTREME.getMedianValue()))
-                        }
-                        if(partner.getPenisRawCumProductionRegenerationValue() < 300000) {
-				            game.appendToTextEndStringBuilder(partner.setPenisCumProductionRegeneration(300000))
-                        }
-			            partner.fillCumToMaxStorage();
-                        if(game.isMuskContentEnabled() && !partner.hasCumModifier(FLUID_MODIFIER_MUSKY)) {
-                            game.appendToTextEndStringBuilder(partner.addCumModifier(FLUID_MODIFIER_MUSKY))
-                        }
-                        if(!partner.hasCumModifier(FLUID_MODIFIER_VISCOUS)) {
-                            game.appendToTextEndStringBuilder(partner.addCumModifier(FLUID_MODIFIER_VISCOUS))
-                        }
-                        if(!partner.hasCumModifier(FLUID_MODIFIER_ADDICTIVE)) {
-                            game.appendToTextEndStringBuilder(partner.addCumModifier(FLUID_MODIFIER_ADDICTIVE))
-                        }
-
                         if((partner.getHeightValue() < 180 || partner.getHeightValue() > 210) && !partner.isShortStature()) {
                             game.appendToTextEndStringBuilder(partner.setHeight(195))
                         } else if (partner.getHeightValue() < 106 && partner.isShortStature()) {
@@ -93,6 +67,34 @@ people into oversexualized twunks!)]
 			            if(partner.getAssHair().getValue() != 0) {
 			                game.appendToTextEndStringBuilder(partner.setAssHair(0))
 			            }
+			            
+			            
+			            if(!partner.hasPenisIgnoreDildo()) {
+				            game.appendToTextEndStringBuilder(partner.setPenisType(partner.getRace().getRacialBody().getPenisType()))
+			            }
+			            if(partner.getPenisRawSizeValue() < PENIS_LENGTH_FIVE_ENORMOUS.getMedianValue()) {
+                            game.appendToTextEndStringBuilder(partner.setPenisSize(PENIS_LENGTH_FIVE_ENORMOUS.getMedianValue()))
+                        }
+                        if(partner.getTesticleSize().getValue() < 7) {
+                            game.appendToTextEndStringBuilder(partner.setTesticleSize(7))
+                        }
+                        if(partner.getPenisRawCumStorageValue() < CUM_PRODUCTION_SIX_EXTREME.getMedianValue()) {
+                            game.appendToTextEndStringBuilder(partner.setPenisCumStorage(CUM_PRODUCTION_SIX_EXTREME.getMedianValue()))
+                        }
+                        if(partner.getPenisRawCumProductionRegenerationValue() < 300000) {
+				            game.appendToTextEndStringBuilder(partner.setPenisCumProductionRegeneration(300000))
+                        }
+			            partner.fillCumToMaxStorage();
+                        if(game.isMuskContentEnabled() && !partner.hasCumModifier(FLUID_MODIFIER_MUSKY)) {
+                            game.appendToTextEndStringBuilder(partner.addCumModifier(FLUID_MODIFIER_MUSKY))
+                        }
+                        if(!partner.hasCumModifier(FLUID_MODIFIER_VISCOUS)) {
+                            game.appendToTextEndStringBuilder(partner.addCumModifier(FLUID_MODIFIER_VISCOUS))
+                        }
+                        if(!partner.hasCumModifier(FLUID_MODIFIER_ADDICTIVE)) {
+                            game.appendToTextEndStringBuilder(partner.addCumModifier(FLUID_MODIFIER_ADDICTIVE))
+                        }
+
 
                         if(partner.getHipSize().getValue() < 4 || partner.getHipSize().getValue() > 7) {
                             game.appendToTextEndStringBuilder(partner.setHipSize(5))
