@@ -192,14 +192,14 @@ people into oversexualized twunks!)]
 
 
                         if(!partner.hasFetish(FETISH_CUM_STUD)) {
-                            if(partner.getFetishDesire(FETISH_CUM_STUD).getValue() == FETISH_DESIRE_FOUR_LOVE) {
+                            if(partner.getFetishDesire(FETISH_CUM_STUD) == FETISH_DESIRE_FOUR_LOVE) {
                                 game.appendToTextEndStringBuilder(partner.addFetish(FETISH_CUM_STUD));
                             } else {
                                 game.appendToTextEndStringBuilder(partner.setFetishDesire(FETISH_CUM_STUD, partner.getFetishDesire(FETISH_CUM_STUD).getNextDesire()));
                             }
                         }
                         if(!partner.hasFetish(FETISH_CUM_ADDICT)) {
-                            if(partner.getFetishDesire(FETISH_CUM_ADDICT).getValue() == FETISH_DESIRE_FOUR_LOVE) {
+                            if(partner.getFetishDesire(FETISH_CUM_ADDICT) == FETISH_DESIRE_FOUR_LOVE) {
                                 game.appendToTextEndStringBuilder(partner.addFetish(FETISH_CUM_ADDICT));
                             } else {
                                 game.appendToTextEndStringBuilder(partner.setFetishDesire(FETISH_CUM_ADDICT, partner.getFetishDesire(FETISH_CUM_ADDICT).getNextDesire()));
