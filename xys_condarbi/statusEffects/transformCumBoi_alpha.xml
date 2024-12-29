@@ -191,28 +191,28 @@ people into oversexualized twunks!)]
                         }
 
 
-                        if(!partner.hasFetish(FETISH_CUM_STUD) {
+                        if(!partner.hasFetish(FETISH_CUM_STUD)) {
                             if(partner.getFetishDesire(FETISH_CUM_STUD).getValue() == 4) {
                                 game.appendToTextEndStringBuilder(partner.addFetish(FETISH_CUM_STUD));
                             } else {
                                 game.appendToTextEndStringBuilder(partner.setFetishDesire(FETISH_CUM_STUD, player.getFetishDesire(FETISH_CUM_STUD).getNextDesire()));
                             }
                         }
-                        if(!partner.hasFetish(FETISH_CUM_ADDICT) {
+                        if(!partner.hasFetish(FETISH_CUM_ADDICT)) {
                             if(partner.getFetishDesire(FETISH_CUM_ADDICT).getValue() == 4) {
                                 game.appendToTextEndStringBuilder(partner.addFetish(FETISH_CUM_ADDICT));
                             } else {
                                 game.appendToTextEndStringBuilder(partner.setFetishDesire(FETISH_CUM_ADDICT, player.getFetishDesire(FETISH_CUM_ADDICT).getNextDesire()));
                             }
                         }
-                        if(!partner.hasFetish(FETISH_TRANSFORMATION_GIVING) {
+                        if(!partner.hasFetish(FETISH_TRANSFORMATION_GIVING)) {
                             if(partner.getFetishDesire(FETISH_TRANSFORMATION_GIVING).getValue() == 4) {
                                 game.appendToTextEndStringBuilder(partner.addFetish(FETISH_TRANSFORMATION_GIVING));
                             } else {
                                 game.appendToTextEndStringBuilder(partner.setFetishDesire(FETISH_TRANSFORMATION_GIVING, player.getFetishDesire(FETISH_TRANSFORMATION_GIVING).getNextDesire()));
                             }
                         }
-                        if(!partner.hasFetish(FETISH_SIZE_QUEEN) {
+                        if(!partner.hasFetish(FETISH_SIZE_QUEEN)) {
                             if(partner.getFetishDesire(FETISH_SIZE_QUEEN).getValue() == 4) {
                                 game.appendToTextEndStringBuilder(partner.addFetish(FETISH_SIZE_QUEEN));
                             } else {
