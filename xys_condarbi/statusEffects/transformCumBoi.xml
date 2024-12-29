@@ -41,13 +41,13 @@
 
                         if(partner.isShortStature()) {
                             if(partner.getHeightValue() < 106) {
-                                game.appendToTextEndStringBuilder(partner.incrementHeight(10));
+                                game.appendToTextEndStringBuilder(partner.incrementHeight(10, false));
                             }
                         } else {
                             if(partner.getHeightValue() < 150) {
-                                game.appendToTextEndStringBuilder(partner.incrementHeight(10));
+                                game.appendToTextEndStringBuilder(partner.incrementHeight(10, false));
                             } else if (partner.getHeightValue() > 200) {
-                                game.appendToTextEndStringBuilder(partner.incrementHeight(-10));
+                                game.appendToTextEndStringBuilder(partner.incrementHeight(-10, false));
                             } else if((partner.getHeightValue() < 160 || partner.getHeightValue() > 190)) {
                                 game.appendToTextEndStringBuilder(partner.setHeight(175));
                             }

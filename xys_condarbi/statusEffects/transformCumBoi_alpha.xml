@@ -43,13 +43,13 @@ people into oversexualized twunks!)]
 
                         if(partner.isShortStature()) {
                             if(partner.getHeightValue() < 106) {
-                                game.appendToTextEndStrinkBuilder(partner.incrementHeight(10))
+                                game.appendToTextEndStrinkBuilder(partner.incrementHeight(10, false))
                             }
                         } else {
                             if(partner.getHeightValue() < 170) {
-                                game.appendToTextEndStringBuilder(partner.incrementHeight(10))
+                                game.appendToTextEndStringBuilder(partner.incrementHeight(10, false))
                             } else if (partner.getHeightValue() > 220) {
-                                game.appendToTextEndStringBuilder(partner.incrementHeight(-10))
+                                game.appendToTextEndStringBuilder(partner.incrementHeight(-10, false))
                             } else if ((partner.getHeightValue() < 180 || partner.getHeightValue() > 210) && !partner.isShortStature()) {
                                 game.appendToTextEndStringBuilder(partner.setHeight(195))
                             }
