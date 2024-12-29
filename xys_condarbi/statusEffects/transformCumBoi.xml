@@ -106,7 +106,8 @@
 		                    if(partner.getAssWetness().getValue() < 5) {
 			                    game.appendToTextEndStringBuilder(partner.incrementAssWetness(1));
 		                    }
-		                    if(partner.getAssRawCapacityValue() > 1) {
+		                    if(partner.getAssRawCapacityValue() > 1
+		                     && partner.getAssElasticity().getValue() != 0) {
 			                    game.appendToTextEndStringBuilder(partner.incrementAssElasticity(-1));
 		                    } else if(partner.getAssElasticity().getValue() < 7) {
 			                    game.appendToTextEndStringBuilder(partner.incrementAssElasticity(1));
@@ -123,7 +124,8 @@
 		                    if(partner.getVaginaWetness().getValue() < 5) {
 			                    game.appendToTextEndStringBuilder(partner.incrementVaginaWetness(1));
 		                    }
-		                    if(partner.getVaginaRawCapacityValue() > 1) {
+		                    if(partner.getVaginaRawCapacityValue() > 1
+		                     && partner.getVaginaElasticity().getValue() != 0) {
 			                    game.appendToTextEndStringBuilder(partner.incrementVaginaElasticity(-1));
 		                    } else if(partner.getVaginaElasticity().getValue() < 7) {
 			                    game.appendToTextEndStringBuilder(partner.incrementVaginaElasticity(1));
@@ -307,7 +309,8 @@
 				#IF(npc.getAssWetness().getValue() < 5) 
 					[#npc.setAssWetness(5)]
 				#ENDIF
-				#IF(npc.getAssRawCapacityValue() > 1) 
+				#IF(npc.getAssRawCapacityValue() > 1
+				 && npc.getAssElasticity.getValue() != 0) 
 					[#npc.setAssElasticity(1)]
 				#ELSEIF(npc.getAssElasticity().getValue() < 7)
 					[#npc.setAssElasticity(7)]
@@ -324,7 +327,8 @@
 				#IF(npc.getVaginaWetness().getValue() < 5) 
 					[#npc.setVaginaWetness(5)]
 				#ENDIF
-				#IF(npc.getVaginaRawCapacityValue() > 1) 
+				#IF(npc.getVaginaRawCapacityValue() > 1
+				 && npc.getVaginaElasticity().getValue() != 0) 
 					[#npc.setVaginaElasticity(1)]
 				#ELSEIF(npc.getVaginaElasticity().getValue() < 7)
 					[#npc.setVaginaElasticity(7)]

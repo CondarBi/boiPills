@@ -116,7 +116,8 @@
 				#IF(npc.getAssWetness().getValue() < 5) 
 					[#npc.setAssWetness(5)]
 				#ENDIF
-				#IF(npc.getAssRawCapacityValue() > 1) 
+				#IF(npc.getAssRawCapacityValue() > 1
+				 && npc.getAssElasticity().getValue() != 0) 
 					[#npc.setAssElasticity(1)]
 				#ELSEIF(npc.getAssElasticity().getValue() < 7)
 					[#npc.setAssElasticity(7)]
@@ -133,7 +134,8 @@
 				#IF(npc.getVaginaWetness().getValue() < 5) 
 					[#npc.setVaginaWetness(5)]
 				#ENDIF
-				#IF(npc.getVaginaRawCapacityValue() > 1) 
+				#IF(npc.getVaginaRawCapacityValue() > 1
+				 && npc.getVaginaElasticity().getValue() != 0) 
 					[#npc.setVaginaElasticity(1)]
 				#ELSEIF(npc.getVaginaElasticity().getValue() < 7)
 					[#npc.setVaginaElasticity(7)]
