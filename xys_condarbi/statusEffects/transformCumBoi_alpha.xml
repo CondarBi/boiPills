@@ -189,25 +189,36 @@ people into oversexualized twunks!)]
                                 game.appendToTextEndStringBuilder(partner.addNippleOrificeModifier(ORIFICE_MODIFIER_MUSCLE_CONTROL))
                             }
                         }
-			            
-			            
 
-			            if(!partner.hasFetish(FETISH_CUM_STUD)) {
-			                partner.setFetishDesire(FETISH_CUM_STUD, FETISH_DESIRE_FOUR_LOVE);
-				            game.appendToTextEndStringBuilder(partner.addFetish(FETISH_CUM_STUD));
-			            }
-			            if(!partner.hasFetish(FETISH_CUM_ADDICT)) {
-			                partner.setFetishDesire(FETISH_CUM_ADDICT, FETISH_DESIRE_FOUR_LOVE);
-				            game.appendToTextEndStringBuilder(partner.addFetish(FETISH_CUM_ADDICT));
-			            }
-			            if(!partner.hasFetish(FETISH_TRANSFORMATION_GIVING)) {
-			                partner.setFetishDesire(FETISH_TRANSFORMATION_GIVING, FETISH_DESIRE_FOUR_LOVE);
-			                game.appendToTextEndStringBuilder(partner.addFetish(FETISH_TRANSFORMATION_GIVING));
-			            }
-			            if(game.isPenetrationLimitationsEnabled() && !partner.hasFetish(FETISH_SIZE_QUEEN)) {
-			                partner.setFetishDesire(FETISH_SIZE_QUEEN, FETISH_DESIRE_FOUR_LOVE);
-				            game.appendToTextEndStringBuilder(partner.addFetish(FETISH_SIZE_QUEEN));
-			            }
+
+                        if(!partner.hasFetish(FETISH_CUM_STUD) {
+                            if(partner.getFetishDesire(FETISH_CUM_STUD).getValue() == 4) {
+                                game.appendToTextEndStringBuilder(partner.addFetish(FETISH_CUM_STUD));
+                            } else {
+                                game.appendToTextEndStringBuilder(partner.setFetishDesire(FETISH_CUM_STUD, player.getFetishDesire(FETISH_CUM_STUD).getNextDesire()));
+                            }
+                        }
+                        if(!partner.hasFetish(FETISH_CUM_ADDICT) {
+                            if(partner.getFetishDesire(FETISH_CUM_ADDICT).getValue() == 4) {
+                                game.appendToTextEndStringBuilder(partner.addFetish(FETISH_CUM_ADDICT));
+                            } else {
+                                game.appendToTextEndStringBuilder(partner.setFetishDesire(FETISH_CUM_ADDICT, player.getFetishDesire(FETISH_CUM_ADDICT).getNextDesire()));
+                            }
+                        }
+                        if(!partner.hasFetish(FETISH_TRANSFORMATION_GIVING) {
+                            if(partner.getFetishDesire(FETISH_TRANSFORMATION_GIVING).getValue() == 4) {
+                                game.appendToTextEndStringBuilder(partner.addFetish(FETISH_TRANSFORMATION_GIVING));
+                            } else {
+                                game.appendToTextEndStringBuilder(partner.setFetishDesire(FETISH_TRANSFORMATION_GIVING, player.getFetishDesire(FETISH_TRANSFORMATION_GIVING).getNextDesire()));
+                            }
+                        }
+                        if(!partner.hasFetish(FETISH_SIZE_QUEEN) {
+                            if(partner.getFetishDesire(FETISH_SIZE_QUEEN).getValue() == 4) {
+                                game.appendToTextEndStringBuilder(partner.addFetish(FETISH_SIZE_QUEEN));
+                            } else {
+                                game.appendToTextEndStringBuilder(partner.setFetishDesire(FETISH_SIZE_QUEEN, player.getFetishDesire(FETISH_SIZE_QUEEN).getNextDesire()));
+                            }
+                        }
 
 						if(!partner.hasStatusEffect(SE_xys_condarbi_transformCumBoi_alpha)) {
 							partner.addStatusEffect(SE_xys_condarbi_transformCumBoi, 21600);
