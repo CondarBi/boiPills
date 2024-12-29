@@ -171,7 +171,8 @@
                  && npc.getBreastRawMilkStorageValue() < 20)
                     [#npc.setBreastMilkStorage(20)]
                 #ENDIF
-				#IF(npc.getNippleRawCapacityValue() > 1) 
+				#IF(npc.getNippleRawCapacityValue() > 1
+				 && npc.getNippleElasticity().getValue() != 0)
 					[#npc.setNippleElasticity(0)]
 				#ELSEIF(npc.getNippleElasticity().getValue() < 7)
 					[#npc.setNippleElasticity(7)]

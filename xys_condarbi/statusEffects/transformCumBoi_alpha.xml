@@ -179,7 +179,8 @@ people into oversexualized twunks!)]
                              && partner.getBreastRawMilkStorageValue() < 20) {
                                 game.appendToTextEndStringBuilder(partner.setBreastMilkStorage(20))
                             }
-				            if(partner.getNippleRawCapacityValue() > 1) {
+				            if(partner.getNippleRawCapacityValue() > 1
+				             && partner.getNippleElasticity().getValue() != 0) {
 					            game.appendToTextEndStringBuilder(partner.incrementNippleElasticity(-1))
 				            } else if (partner.getNippleElasticity().getValue() < 7) {
 					            game.appendToTextEndStringBuilder(partner.incrementNippleElasticity(1))
