@@ -108,12 +108,12 @@ people into oversexualized twunks!)]
                         }
 
 
-                        if(partner.getHipSize().getValue() = 3) {
+                        if(partner.getHipSize().getValue() == 3) {
                             game.appendToTextEndStringBuilder(partner.setHipSize(5))
                         } else if (partner.getHipSize().getValue() < 4) {
                             game.appendToTextEndStringBuilder(partner.incrementHipSize(1))
                         }
-                        if(partner.getAssSize().getValue() = 3) {
+                        if(partner.getAssSize().getValue() == 3) {
                             game.appendToTextEndStringBuilder(partner.setAssSize(5))
                         } else if (partner.getAssSize().getValue() < 4) {
                             game.appendToTextEndStringBuilder(partner.incrementAssSize(1))
