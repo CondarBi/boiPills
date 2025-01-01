@@ -45,4 +45,4 @@ To install this mod, place the `xys_condarbi` folder in your game's `/res/mods` 
 
 
 
-This project is very heavily derivative of X&Y's "Futa Pills" mod, specifically the version released on 20024/10/08, distributed via Google Drive and the official Lilith's Throne Discord server.
+This project is very heavily derivative of X&Y's "Futa Pills" mod, specifically the version released on 2024/10/08, distributed via Google Drive and the official Lilith's Throne Discord server.
