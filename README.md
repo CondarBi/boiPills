@@ -9,13 +9,7 @@ To install this mod, place the `xys_condarbi` folder in your game's `/res/mods` 
 └── res
     ├── characters
     ├── clothing
-    ├── colours
-    ├── dialogue
-    ├── encounters
-    ├── fonts
-    ├── images
-    ├── items
-    ├── keybinds
+    ├── ...
     ├── maps
     ├── mods
     │   ├── innoxia
@@ -31,14 +25,7 @@ To install this mod, place the `xys_condarbi` folder in your game's `/res/mods` 
     │       ├── items
     │       └── statusEffects
     ├── outfits
-    ├── patchNotes
-    ├── patterns
-    ├── race
-    ├── setBonuses
-    ├── sex
-    ├── statusEffects
-    ├── tattoos
-    ├── txt
+    ├── ...
     └── weapons
 ```
 
