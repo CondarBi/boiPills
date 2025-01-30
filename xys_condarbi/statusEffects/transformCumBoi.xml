@@ -106,9 +106,11 @@
 		                    if(partner.getAssWetness().getValue() < 5) {
 			                    game.appendToTextEndStringBuilder(partner.incrementAssWetness(1));
 		                    }
-		                    if(partner.getAssRawCapacityValue() > 1
-		                     && partner.getAssElasticity().getValue() != 0) {
-			                    game.appendToTextEndStringBuilder(partner.incrementAssElasticity(-1));
+                        if(partner.getAssRawCapacityValue() < 1
+                         || partner.hasFetish(FETISH_SIZE_QUEEN)) {
+                          if(partner.getAssElasticity().getValue() != 0){
+                            game.appendToTextEndStringBuilder(partner.incrementAssElasticity(-1));
+                          }
 		                    } else if(partner.getAssElasticity().getValue() < 7) {
 			                    game.appendToTextEndStringBuilder(partner.incrementAssElasticity(1));
 		                    }
@@ -124,9 +126,11 @@
 		                    if(partner.getVaginaWetness().getValue() < 5) {
 			                    game.appendToTextEndStringBuilder(partner.incrementVaginaWetness(1));
 		                    }
-		                    if(partner.getVaginaRawCapacityValue() > 1
-		                     && partner.getVaginaElasticity().getValue() != 0) {
-			                    game.appendToTextEndStringBuilder(partner.incrementVaginaElasticity(-1));
+                        if(partner.getVaginaRawCapacityValue() < 1
+                         || partner.hasFetish(FETISH_SIZE_QUEEN)) {
+                          if(partner.getVaginaElasticity().getValue() != 0){
+                            game.appendToTextEndStringBuilder(partner.incrementVaginaElasticity(-1));
+                          }
 		                    } else if(partner.getVaginaElasticity().getValue() < 7) {
 			                    game.appendToTextEndStringBuilder(partner.incrementVaginaElasticity(1));
 		                    }
@@ -162,9 +166,11 @@
 		                     && partner.getBreastRawMilkStorageValue() < 20) {
 			                    game.appendToTextEndStringBuilder(partner.setBreastMilkStorage(20));
 		                    }
-		                    if(partner.getNippleRawCapacityValue() > 1
-		                     && partner.getNippleElasticity().getValue() != 0) {
-			                    game.appendToTextEndStringBuilder(partner.incrementNippleElasticity(-1));
+                        if(partner.getNippleRawCapacityValue() < 1
+                         || partner.hasFetish(FETISH_SIZE_QUEEN)) {
+                          if(partner.getNippleElasticity().getValue() != 0){
+                            game.appendToTextEndStringBuilder(partner.incrementNippleElasticity(-1));
+                          }
 		                    } else if(partner.getNippleElasticity().getValue() < 7) {
 			                    game.appendToTextEndStringBuilder(partner.incrementNippleElasticity(1));
 		                    }
@@ -286,9 +292,11 @@
                  && npc.getBreastRawMilkStorageValue() < 20)
                     [#npc.setBreastMilkStorage(20)]
                 #ENDIF
-				#IF(npc.getNippleRawCapacityValue() > 1
-				 && npc.getNippleElasticity().getValue() != 0)
-					[#npc.setNippleElasticity(0)]
+        #IF(npc.getNippleRawCapacityValue() < 1
+         || npc.hasFetish(FETISH_SIZE_QUEEN))
+          #IF(npc.getNippleElasticity().getValue() != 0)
+            [#npc.setNippleElasticity(0)]
+          #ENDIF
 				#ELSEIF(npc.getNippleElasticity().getValue() < 7)
 					[#npc.setNippleElasticity(7)]
 				#ENDIF
@@ -311,9 +319,11 @@
 				#IF(npc.getAssWetness().getValue() < 5) 
 					[#npc.setAssWetness(5)]
 				#ENDIF
-				#IF(npc.getAssRawCapacityValue() > 1
-				 && npc.getAssElasticity.getValue() != 0) 
-					[#npc.setAssElasticity(0)]
+        #IF(npc.getAssRawCapacityValue() < 1
+         || npc.hasFetish(FETISH_SIZE_QUEEN))
+          #IF(npc.getAssElasticity().getValue() != 0)
+            [#npc.setAssElasticity(0)]
+          #ENDIF
 				#ELSEIF(npc.getAssElasticity().getValue() < 7)
 					[#npc.setAssElasticity(7)]
 				#ENDIF
@@ -329,9 +339,11 @@
 				#IF(npc.getVaginaWetness().getValue() < 5) 
 					[#npc.setVaginaWetness(5)]
 				#ENDIF
-				#IF(npc.getVaginaRawCapacityValue() > 1
-				 && npc.getVaginaElasticity().getValue() != 0) 
-					[#npc.setVaginaElasticity(0)]
+        #IF(npc.getVaginaRawCapacityValue() < 1
+         || npc.hasFetish(FETISH_SIZE_QUEEN))
+          #IF(npc.getVaginaElasticity().getValue() != 0)
+            [#npc.setVaginaElasticity(0)]
+          #ENDIF
 				#ELSEIF(npc.getVaginaElasticity().getValue() < 7)
 					[#npc.setVaginaElasticity(7)]
 				#ENDIF

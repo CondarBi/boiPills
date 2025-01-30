@@ -123,9 +123,11 @@ people into oversexualized twunks!)]
 				            if(partner.getAssWetness().getValue() < 5) {
 					            game.appendToTextEndStringBuilder(partner.incrementAssWetness(1))
 				            }
-				            if(partner.getAssRawCapacityValue() > 1
-				             && partner.getAssElasticity().getValue() != 0) {
-					            game.appendToTextEndStringBuilder(partner.incrementAssElasticity(-1))
+                    if(partner.getAssRawCapacityValue() < 1
+                     || partner.hasFetish(FETISH_SIZE_QUEEN)) {
+                      if(partner.getAssElasticity().getValue() != 0){
+                        game.appendToTextEndStringBuilder(partner.incrementAssElasticity(-1));
+                      }
 				            } else if (partner.getAssElasticity().getValue() < 7) {
 					            game.appendToTextEndStringBuilder(partner.incrementAssElasticity(1))
 				            }
@@ -141,9 +143,11 @@ people into oversexualized twunks!)]
 				            if(partner.getVaginaWetness().getValue() < 5) {
 					            game.appendToTextEndStringBuilder(partner.incrementVaginaWetness(1))
 				            }
-				            if(partner.getVaginaRawCapacityValue() > 1
-				             && partner.getVaginaElasticity().getValue() != 0) {
-					            game.appendToTextEndStringBuilder(partner.incrementVaginaElasticity(-1))
+                    if(partner.getVaginaRawCapacityValue() < 1
+                     || partner.hasFetish(FETISH_SIZE_QUEEN)) {
+                      if(partner.getVaginaElasticity().getValue() != 0){
+                        game.appendToTextEndStringBuilder(partner.incrementVaginaElasticity(-1));
+                      }
 				            } else if (partner.getVaginaElasticity().getValue() < 7) {
 					            game.appendToTextEndStringBuilder(partner.incrementVaginaElasticity(1))
 				            }
@@ -179,9 +183,11 @@ people into oversexualized twunks!)]
                              && partner.getBreastRawMilkStorageValue() < 20) {
                                 game.appendToTextEndStringBuilder(partner.setBreastMilkStorage(20))
                             }
-				            if(partner.getNippleRawCapacityValue() > 1
-				             && partner.getNippleElasticity().getValue() != 0) {
-					            game.appendToTextEndStringBuilder(partner.incrementNippleElasticity(-1))
+                    if(partner.getNippleRawCapacityValue() < 1
+                     || partner.hasFetish(FETISH_SIZE_QUEEN)) {
+                      if(partner.getNippleElasticity().getValue() != 0){
+                        game.appendToTextEndStringBuilder(partner.incrementNippleElasticity(-1));
+                      }
 				            } else if (partner.getNippleElasticity().getValue() < 7) {
 					            game.appendToTextEndStringBuilder(partner.incrementNippleElasticity(1))
 				            }
